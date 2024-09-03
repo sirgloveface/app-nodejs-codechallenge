@@ -7,7 +7,7 @@ import { Transaction } from 'src/entity/transaction.entity';
 export class TransactionController {
   constructor(private readonly transactionService: TransactionService) {}
 
-  @Post()
+  @Post('')
   async createTransaction(
     @Body() createTransactionDto: CreateTransactionDto,
   ): Promise<Transaction> {

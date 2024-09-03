@@ -7,7 +7,7 @@ import { Repository } from 'typeorm';
 @Injectable()
 export class KafkaService implements OnModuleInit, OnModuleDestroy {
   private readonly kafka = new Kafka({
-    brokers: [process.env.KAFKA_ADVERTISED_LISTENERS] || ['localhost:9092'],
+    brokers: ['localhost:9092'],
   });
   private readonly producer: Producer = this.kafka.producer();
   private readonly consumer: Consumer = this.kafka.consumer({
